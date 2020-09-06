@@ -59,7 +59,10 @@ else {
 
 const femaleCharButton = document.querySelector('.femalecharacterbutton')
 femaleCharButton.addEventListener('click', function() {
-    $(mainArea).removeData(CharacterData);
+    // DELETE task with id = 1
+    fetch(`https://rickandmortyapi.com/api/character/?page=1&2`, {
+        method: ‘DELETE’
+    })
     getAPIData(`https://rickandmortyapi.com/api/character/?gender=female`)
     .then(data => {
         for (const femaleCharacters of data.results) {
