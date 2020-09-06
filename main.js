@@ -85,6 +85,20 @@ maleCharButton.addEventListener('click', function() {
     })
 })
 
+const alienCharButton = document.querySelector('.aliencharacterbutton')
+alienCharButton.addEventListener('click', function() {
+    deleteCards();
+    getAPIData(`https://rickandmortyapi.com/api/character/?gender=genderless&unknown`)
+    .then(data => {
+        for (const alienCharacters of data.results) {
+        getAPIData(alienCharacters.url)
+        .then(characterdata => {
+            populateDOM(characterdata)
+            })
+        }
+    })
+})
+
 function deleteCards() {
     while (mainArea.firstChild) {
       mainArea.removeChild(mainArea.firstChild);
