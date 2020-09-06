@@ -108,7 +108,7 @@ html {
   
    /*Button Styling*/
   
-  .newbutton {
+  button {
     width: 200px; 
     height: 40px;
     font-size: 1rem;
