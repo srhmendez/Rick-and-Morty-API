@@ -1,0 +1,130 @@
+html {
+    display:flex;
+    justify-content: center;
+  }
+  body {
+    background-color: black;
+  }
+  header {
+    display:flex;
+    justify-content: center;
+    margin-bottom:30px;
+    width: 100%;
+  
+  }
+  .logo {
+    min-width: 600px;
+  }
+  
+  main {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 10px;
+      row-gap: 10px;
+      grid-auto-rows: minmax(auto, auto);
+    
+    }
+  .scene {
+     width: 300px;
+     height:350px;
+     margin-bottom:10x;
+     border: 3px solid skyblue;
+     perspective: 600px;
+    }
+    
+  
+    .card {
+      height: 100%;
+      width: 100%;
+      transition: transform 1s;
+      transition: transform 1s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+      position: relative;
+      background-color:yellowgreen;
+  
+    
+    }
+    h2.card__face.card__face--front {
+      width: 300px;
+      color:steelblue;
+      max-inline-size:300px;
+      text-align: center;
+      font-size: 1em;
+    }
+    
+    .card.is-flipped {
+      transform: rotateY(180deg);
+    }
+    
+    .card__face {
+      position: absolute;
+      max-width: 300px;
+      max-height: 350px;
+      color: white;
+      text-align: center;
+      background: yellowgreen;
+      
+      
+    }
+   
+    p {
+      padding:5px;
+      margin:2px;
+      border: solid 1px steelblue;
+      background:skyblue;
+      display: list-item;
+      margin:0px;
+    }
+    .card__face--front {
+      backface-visibility: hidden;
+      background:yellowgreen;
+    }
+    .card__face--back {
+      padding-top:30px;
+      transform: rotateY(180deg);
+    
+    }
+    img.card__face--front {
+      position:fixed;
+      justify-content: center;
+      position: absolute;
+      margin-top:50px;
+    }
+    div.card__face.card__face--back {
+      backface-visibility: hidden;
+      width: 300px;
+      height:320px;
+    }
+    .backdata {
+      margin-top:30px;
+      margin-left:100px;
+      margin-right:100px;
+    }
+    .stats {
+      color: steelblue;
+    }
+  
+   /*Button Styling*/
+  
+  .newbutton {
+    width: 200px; 
+    height: 40px;
+    font-size: 1rem;
+    margin:20px;
+    border-radius: 8px;
+    justify-content: center;
+    background: yellowgreen;
+    font-weight: bold;
+    color: darkslategrey;
+    border:solid skyblue 2px;
+  }
+  .buttondiv {
+    width:100%;
+    display: flex;
+    justify-content: center;
+  }
+    
+  
+    
