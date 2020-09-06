@@ -26,6 +26,22 @@ changed the stringify JSON data option for the try console log below to just dat
 
 
 
+/*Function that gets the information or data from the API*/
+
+
+async function getAPIData(url) {
+    try {
+        const response = await fetch(url)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        console.error(error) 
+    }
+    }
+
+    
+
+
 const newCharButton = document.querySelector('.newcharacterbutton')
 newCharButton.addEventListener('click', function() {
     let charID = prompt("Add a character number between 0 & 493")
@@ -45,25 +61,12 @@ const femaleCharButton = document.querySelector('.femalecharacterbutton')
 femaleCharButton.addEventListener('click', function() {
     getAPIData(`https://rickandmortyapi.com/api/character/?gender=female`)
     .then(result =>{
-        populateDOM(result)
+        //populateDOM(result)
+        console.log(result)
     })  
 });
 
 
-
-/*Function that gets the information or data from the API*/
-
-
-async function getAPIData(url) {
-try {
-    const response = await fetch(url)
-    const data = await response.json()
-    return data
-} catch (error) {
-    console.error(error)
-    
-}
-}
 
 
 //refactoring code is when you rethink the code you used to try and make it more simple and efficient
