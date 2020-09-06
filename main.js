@@ -26,8 +26,8 @@ changed the stringify JSON data option for the try console log below to just dat
 
 
 
-const newButton = document.querySelector('.newbutton')
-newButton.addEventListener('click', function() {
+const newCharButton = document.querySelector('.newcharacterbutton')
+newCharButton.addEventListener('click', function() {
     let charID = prompt("Add a character number between 0 & 493")
     if (charID > 0 && charID <= 493)
     getAPIData(`https://rickandmortyapi.com/api/character/${charID}`)
@@ -41,6 +41,13 @@ else {
     }   
 }) 
 
+const femaleCharButton = document.querySelector('.femalecharacterbutton')
+femalecharacterbutton.addEventListener('click', function() {
+    getAPIData(`https://rickandmortyapi.com/api/character/?gender=female`)
+    .then(result =>{
+        populateDOM(result)
+    })  
+}) 
 
 
 
