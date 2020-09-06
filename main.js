@@ -69,7 +69,7 @@ femaleCharButton.addEventListener('click', function() {
             })
         }
     })
-
+})
 
 
 
