@@ -61,7 +61,7 @@ const femaleCharButton = document.querySelector('.femalecharacterbutton')
 femaleCharButton.addEventListener('click', function() {
     getAPIData(`https://rickandmortyapi.com/api/character/?gender=female`)
     .then(result =>{
-        clear.console(theData)
+        
         populateDOM(result)
         console.log(result)
     })  
@@ -76,7 +76,7 @@ and populates the DOM with the information that is then displayed in the console
 
 
 
-const theData = getAPIData(`https://rickandmortyapi.com/api/character/?page=1`)
+const theData = getAPIData(`https://rickandmortyapi.com/api/character/?page=1&2`)
 .then(data => {
     for (const characters of data.results) {
     getAPIData(characters.url)
@@ -85,7 +85,7 @@ const theData = getAPIData(`https://rickandmortyapi.com/api/character/?page=1`)
         })
     }
 })
-const theData2 = getAPIData(`https://rickandmortyapi.com/api/character/?page=2`)
+/* const theData2 = getAPIData(`https://rickandmortyapi.com/api/character/?page=2`)
 .then(data => {
     for (const characters of data.results) {
     getAPIData(characters.url)
@@ -93,9 +93,17 @@ const theData2 = getAPIData(`https://rickandmortyapi.com/api/character/?page=2`)
         populateDOM(characterdata)
         })
     }
-})
+}) */
       
-
+const  = getAPIData(`https://rickandmortyapi.com/api/character/?page=1`)
+.then(data => {
+    for (const characters of data.results) {
+    getAPIData(characters.url)
+    .then(characterdata => {
+        populateDOM(characterdata)
+        })
+    }
+})
 
 console.log(theData)
 
