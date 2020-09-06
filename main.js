@@ -76,8 +76,8 @@ maleCharButton.addEventListener('click', function() {
     deleteCards();
     getAPIData(`https://rickandmortyapi.com/api/character/?gender=male`)
     .then(data => {
-        for (const femaleCharacters of data.results) {
-        getAPIData(femaleCharacters.url)
+        for (const maleCharacters of data.results) {
+        getAPIData(maleCharacters.url)
         .then(characterdata => {
             populateDOM(characterdata)
             })
