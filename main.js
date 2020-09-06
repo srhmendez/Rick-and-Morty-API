@@ -102,7 +102,7 @@ alienCharButton.addEventListener('click', function() {
 const allCharButton = document.querySelector('.allcharacterbutton')
 allCharButton.addEventListener('click', function() {
     deleteCards();
-    getAPIData(`https://rickandmortyapi.com/api/character/?page=1&page=2&page=3`)
+    getAPIData(`https://rickandmortyapi.com/api/character/?page=1&2`)
     .then(data => {
         for (const allCharacters of data.results) {
         getAPIData(allCharacters.url)
