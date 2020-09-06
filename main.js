@@ -42,7 +42,7 @@ else {
 });
 
 const femaleCharButton = document.querySelector('.femalecharacterbutton')
-femalecharacterbutton.addEventListener('click', function() {
+femaleCharButton.addEventListener('click', function() {
     getAPIData(`https://rickandmortyapi.com/api/character/?gender=female`)
     .then(result =>{
         populateDOM(result)
