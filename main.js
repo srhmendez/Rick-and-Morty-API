@@ -26,28 +26,7 @@ changed the stringify JSON data option for the try console log below to just dat
 
 
 
-const newCharButton = document.querySelector('.newcharacterbutton')
-newCharButton.addEventListener('click', function() {
-    let charID = prompt("Add a character number between 0 & 493")
-    if (charID > 0 && charID <= 493)
-    getAPIData(`https://rickandmortyapi.com/api/character/${charID}`)
-    .then(result =>{
-        populateDOM(result)
-    }) 
 
-else {
-        
-        alert('There are no characters with that ID number, please use a valid ID number.')
-    }   
-}) 
-
-const femaleCharButton = document.querySelector('.femalecharacterbutton')
-femalecharacterbutton.addEventListener('click', function() {
-    getAPIData(`https://rickandmortyapi.com/api/character/?gender=female`)
-    .then(result =>{
-        populateDOM(result)
-    })  
-}) 
 
 
 
@@ -198,5 +177,28 @@ function getCharacterNumber(charURL) {
          
 }
 
+
+const newCharButton = document.querySelector('.newcharacterbutton')
+newCharButton.addEventListener('click', function() {
+    let charID = prompt("Add a character number between 0 & 493")
+    if (charID > 0 && charID <= 493)
+    getAPIData(`https://rickandmortyapi.com/api/character/${charID}`)
+    .then(result =>{
+        populateDOM(result)
+    }) 
+
+else {
+        
+        alert('There are no characters with that ID number, please use a valid ID number.')
+    }   
+}) 
+
+const femaleCharButton = document.querySelector('.femalecharacterbutton')
+femalecharacterbutton.addEventListener('click', function() {
+    getAPIData(`https://rickandmortyapi.com/api/character/?gender=Female`)
+    .then(result =>{
+        populateDOM(result)
+    })  
+}) 
 
 
