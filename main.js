@@ -59,10 +59,7 @@ else {
 
 const femaleCharButton = document.querySelector('.femalecharacterbutton')
 femaleCharButton.addEventListener('click', function() {
-    // DELETE task with id = 1
-    fetch(`https://rickandmortyapi.com/api/character/?page=1&2`, {
-        method: ‘DELETE’
-    })
+    deleteCards();
     getAPIData(`https://rickandmortyapi.com/api/character/?gender=female`)
     .then(data => {
         for (const femaleCharacters of data.results) {
@@ -76,6 +73,11 @@ femaleCharButton.addEventListener('click', function() {
 
 
 
+function deleteCards() {
+    while (mainArea.firstChild) {
+      mainArea.removeChild(mainArea.firstChild);
+    }
+  }
 
 //refactoring code is when you rethink the code you used to try and make it more simple and efficient
 /*theData function below gets the character information from the online repository and the takes the data 
